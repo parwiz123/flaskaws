@@ -1,0 +1,67 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="">
+      <img src="{{url_for('static', filename='flask.png')}}" width="100" height="50" class="d-inline-block align-text-top">
+    </a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#insert_modal">Add Book</button>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+
+
+
+
+<!-- Modal  for inserting the book -->
+<div id="insert_modal" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">Add Book</h4>
+         </div>
+         <div class="modal-body">
+
+            <form action="{{url_for('insert_book')}}" method="POST">
+
+
+               <div class="form-group">
+                  <label>Title:</label>
+                  <input type="text" class="form-control" name="title" required="1">
+               </div>
+
+
+                <div class="form-group">
+                  <label>Author:</label>
+                  <input type="text" class="form-control" name="author" required="1">
+               </div>
+
+                 <div class="form-group">
+                  <label>Price:</label>
+                  <input type="number" class="form-control" name="price" required="1">
+               </div>
+
+               <div class="form-group">
+                  <button class="btn btn-primary mt-4" type="submit">Add Book</button>
+               </div>
+
+
+            </form>
+
+
+         </div>
+
+
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+         </div>
+
+      </div>
+   </div>
+
+</div>
